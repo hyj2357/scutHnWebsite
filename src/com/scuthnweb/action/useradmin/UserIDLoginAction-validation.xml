@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定校验配置文件的DTD信息 -->
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<!-- 校验文件的根元素 -->
+<validators>
+	<!-- 校验Action的customer_name属性 -->
+	<field name="customer_name">
+		<!-- 指定name属性必须满足必填规则 -->
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>姓名不能为空！</message>
+		</field-validator>
+	</field>
+	
+	<!-- 校验Action的customer_password属性 -->
+	<field name="customer_password">
+		<!-- 指定customer_email属性必须满足必填规则 -->
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>邮箱不能为空</message>
+		</field-validator>
+		<!-- 指定customer_email属性必须满足匹配指定的正则表达式 -->
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{2,25}@\w{2,25}\.(com|cn))]]></param>
+			<message>邮箱格式不合法，邮箱格式应为xxx(数字或字母,2-25个字母)@xxx(数字或字母,2-25个字母).com</message>
+		</field-validator>
+	</field>
+</validators>

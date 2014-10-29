@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<!DOCTYPE struts  PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd" >
+
+
+<struts>
+   
+
+    <include file="struts-part1.xml"/>
+	
+    <constant name="struts.devMode" value="true"/>
+    
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+    
+    <package name="scuthnweb" extends="struts-default" namespace="/">
+ 
+ 
+        
+<!-- 用户个人管理模块 -->       
+       
+       <!-- Jun: 用户找回密码 -->
+       <action name="userFindPassword" class="com.scuthnweb.action.useradmin.UserFindPasswordAction">
+          <result name="input">    </result>
+          <result name="success">  </result>
+          <result name="error">    </result>
+       </action>
+       
+       <!-- Jun: 用户登录 -->
+       <action name="userIDLogin" class="com.scuthnweb.action.useradmin.UserIDLoginAction">
+          <result name="input">    </result>
+          <result name="success">  </result>
+          <result name="error">    </result>
+       </action>
+       
+       <!-- Jun:用户退出登录 -->
+       <action name="userIDLogOut" class="com.scuthnweb.action.useradmin.UserIDLogOutAction">
+          <result name="success">  </result>
+          <result name="error">    </result>
+       </action>
+    
+       
+       <!-- Jun:用户注册 -->
+       <action name="userIDRegist" class="com.scuthnweb.action.useradmin.UserIDRegistAction">
+          <result name="input">    </result>
+          <result name="success">  </result>
+          <result name="error">    </result>
+       </action>
+    
+    
+       <!-- Jun： 用户查看个人信息 -->
+       <action name="userInfoCheck" class="com.scuthnweb.action.useradmin.UserInfoCheckAction">
+           <result name="success">  </result>
+           <result name="error">    </result>
+       </action>
+    
+    
+       <!-- Jun: 用户修改个人信息  -->
+       <action name="userInfoModify" class="com.scuthnweb.action.useradmin.UserInfoModifyAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>
+       </action>
+       
+       <!-- Jun: 用户修改密码 -->
+       <action name="userPasswordChange" class="com.scuthnweb.action.useradmin.UserPasswordChangeAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>
+       </action>
+       
+<!-- End 用户个人管理模块 -->      
+    
+    
+       
+<!-- 管理需求模块 -->
+        
+       <!-- Jun: 接受需求 -->    
+       <action name="acceptNeed" class="com.scuthnweb.action.needmodule.AcceptNeedAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:撤销接受需求 -->    
+       <action name="cancelNeed" class="com.scuthnweb.action.needmodule.CancelNeedAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:用户查看自己接受的需求信息 -->    
+       <action name="checkAcNeed" class="com.scuthnweb.action.needmodule.CheckAcNeedAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:用户查看接受自己发布的需求的相关用户信息 -->    
+       <action name="checkAcNeedUserInfo" class="com.scuthnweb.action.needmodule.CheckAcNeedUserInfoAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:查看所有需求信息 -->    
+       <action name="checkAllNeed" class="com.scuthnweb.action.needmodule.CheckAllNeedAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:用户查看自己发布的所有需求信息 -->    
+       <action name="checkPostNeed" class="com.scuthnweb.action.needmodule.CheckPostNeedAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun: 删除需求 -->
+       <action name="delNeed" class="com.scuthnweb.action.needmodule.DelNeedAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun: 修改已发布的需求 -->
+       <action name="modifyNeed" class="com.scuthnweb.action.needmodule.ModifyNeedAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+            
+       <!-- Jun: 发布需求 -->
+       <action name="setNeedSucc" class="com.scuthnweb.action.needmodule.SetNeedSuccAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+
+<!-- End 管理需求模块 -->     
+       
+       
+<!-- 管理链接模块 -->    
+       
+       <!-- Jun：查看所有资源链接 -->
+       <action name="checkAllResLink" class="com.scuthnweb.action.reslinkmodule.CheckAllResLinkAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:查看本人上传的链接 -->
+       <action name="checkUpload" class="com.scuthnweb.action.reslinkmodule.CheckUploadAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:查看待审核链接-->
+       <action name="checkVerify" class="com.scuthnweb.action.reslinkmodule.CheckVerifyAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:删除链接 -->
+       <action name="delLink" class="com.scuthnweb.action.reslinkmodule.DelLinkAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+          
+       <!-- Jun：管理员审核链接 -->
+       <action name="op_Link" class="com.scuthnweb.action.reslinkmodule.Op_LinkAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun：更新链接 -->
+       <action name="updateLink" class="com.scuthnweb.action.reslinkmodule.UpdateLinkAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:上传链接 -->
+       <action name="uploadLink" class="com.scuthnweb.action.reslinkmodule.UploadLinkAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+<!-- End  管理链接模块 -->      
+       
+       
+<!-- 管理信息模块 -->       
+       
+       <!-- Jun: 查看所有信息 -->
+       <action name="checkAllNote" class="com.scuthnweb.action.notemodule.CheckAllNoteAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:查看本人发布的信息 -->
+       <action name="checkPostNote" class="com.scuthnweb.action.notemodule.CheckPostNoteAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun: 发布信息 -->
+       <action name="postNote" class="com.scuthnweb.action.notemodule.PostNoteAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun: 修改发布的信息 -->
+       <action name="modifyNote" class="com.scuthnweb.action.notemodule.ModifyNoteAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:删除信息 -->
+       <action name="deleteNote" class="com.scuthnweb.action.notemodule.DeleteNoteAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:下线信息 -->
+       <action name="offLineNote" class="com.scuthnweb.action.notemodule.OffLineNoteAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+<!-- End 管理信息模块 --> 
+      
+       
+<!-- 管理员管理用户模块 --> 
+       
+       <!-- Jun:审核用户注册信息 -->
+       <action name="checkRegInfo" class="com.scuthnweb.action.adminuser.CheckRegInfoAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun: 查看用户信息 -->
+       <action name="checkUserInfo" class="com.scuthnweb.action.adminuser.CheckUserInfoAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun: 注销用户账号 -->
+       <action name="logoutUserID" class="com.scuthnweb.action.adminuser.LogoutUserIDAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun: 修改用户信息 -->
+       <action name="modifyUserInfo" class="com.scuthnweb.action.adminuser.ModifyUserInfoAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       
+<!-- End 管理员管理用户模块 --> 
+
+
+<!-- 管理活动模块 --> 
+      
+       <!-- Jun:查看所有的活动信息 -->
+       <action name="checkAllAct" class="com.scuthnweb.action.actmodule.CheckAllActAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+
+       <!-- Jun:管理员查看自己上线的全部活动 -->
+       <action name="checkPublish" class="com.scuthnweb.action.actmodule.CheckPublishAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:查看当前用户参与的所有活动 -->
+       <action name="checkTakePartIn" class="com.scuthnweb.action.actmodule.CheckTakePartInAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:管理员查看参加活动的用户信息 -->
+       <action name="checkTakePartInUserInfo" class="com.scuthnweb.action.actmodule.CheckTakePartInUserInfoAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+
+       <!-- Jun:退出活动 -->
+       <action name="exitAct" class="com.scuthnweb.action.actmodule.ExitActAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+
+       <!-- Jun:上线活动 -->
+       <action name="onLineAct" class="com.scuthnweb.action.actmodule.OnLineActAction">
+           <result name="input">  </result>
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:参加活动 -->
+       <action name="takePartInAct" class="com.scuthnweb.action.actmodule.TakePartInActAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+<!-- End 管理活动模块  --> 
+
+       
+
+<!-- 管理员个人管理模块 --> 
+
+       <!-- Jun:管理员登录 -->
+       <action name="adminLogin" class="com.scuthnweb.action.adminadmodule.AdminLoginAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:管理员修改密码 -->
+       <action name="modifyPassword" class="com.scuthnweb.action.adminadmodule.ModifyPasswordAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:管理员查看管理员的个人信息 -->
+       <action name="checkAdminInfo" class="com.scuthnweb.action.adminadmodule.CheckAdminInfoAction">
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+       
+       <!-- Jun:管理员修改名称 -->
+       <action name="setName" class="com.scuthnweb.action.adminadmodule.SetNameAction">
+           <result name="input">    </result>
+           <result name="success">  </result>
+           <result name="error">    </result>  
+       </action>
+
+<!-- End 管理员个人管理模块  --> 
+    
+    </package>
+    
+</struts>
